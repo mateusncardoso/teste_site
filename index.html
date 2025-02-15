@@ -194,5 +194,14 @@
       });
     });
   </script>
+    <!-- JavaScript to warm up the service -->
+  <script>
+    window.addEventListener('load', function() {
+      fetch("https://your-cloud-run-url/_warmup")
+        .then(response => response.json())
+        .then(data => console.log("Warmup response:", data))
+        .catch(error => console.error("Warmup error:", error));
+    });
+  </script>
 </body>
 </html>
